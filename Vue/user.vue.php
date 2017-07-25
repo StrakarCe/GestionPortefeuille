@@ -6,19 +6,19 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-              <label for="first_name">First Name</label>
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">Prénom</label>
             </div>
             <div class="input-field col s6">
               <input id="last_name" type="text" class="validate">
-              <label for="last_name">Last Name</label>
+              <label for="last_name">Nom de famille</label>
             </div>
           </div>
-          
+
           <div class="row">
             <div class="input-field col s12">
-              <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-              <label for="disabled">Disabled</label>
+              <input id="email" type="email" class="validate">
+              <label for="email" data-error="wrong" data-success="right">Email</label>
             </div>
           </div>
           <div class="row">
@@ -27,21 +27,7 @@
               <label for="password">Password</label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="email" type="email" class="validate">
-              <label for="email">Email</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-              This is an inline input field:
-              <div class="input-field inline">
-                <input id="email" type="email" class="validate">
-                <label for="email" data-error="wrong" data-success="right">Email</label>
-              </div>
-            </div>
-          </div>
+          <a class="btn-floating btn-large waves-effect waves-light red" id="validation" name="validation"><i class="material-icons">add</i></a>
         </form>
       </div>
 
@@ -49,3 +35,26 @@
     <br><br>
   </div>
 </main>
+
+<script>
+
+$("#validation").click(function(){
+    $.ajax({
+      url : 'Controlleur/user.control.php',
+      type : 'POST',
+      data : JSON.parse('{"transition":"userAdd","data" :{"nom":"' + $("#password").val() + '"}}'),
+      dataType : 'json',
+      success : function(code_html, statut){
+
+       },
+
+       error : function(resultat, statut, erreur){
+
+       },
+
+       complete : function(resultat, statut){
+
+       }
+    });
+});
+</script>
