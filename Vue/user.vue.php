@@ -35,26 +35,3 @@
     <br><br>
   </div>
 </main>
-
-<script>
-
-$("#validation").click(function(){
-    $.ajax({
-      url : 'Controlleur/user.control.php',
-      type : 'POST',
-      data : JSON.parse('{"transition":"userAdd","data" :{"nom":"' + $("#password").val() + '"}}'),
-      dataType : 'json',
-      success : function(code_html, statut){
-
-       },
-
-       error : function(resultat, statut, erreur){
-
-       },
-
-       complete : function(resultat, statut){
-
-       }
-    });
-});
-</script>

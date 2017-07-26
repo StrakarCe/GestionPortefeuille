@@ -2,7 +2,8 @@
 if(isset($_POST['transition'])){
   switch($_POST['transition']){
     case "userAdd":
-      var_dump("superchek");
+      if(isset($_POST['login']))
+      ajoutUtilisateur()
       break;
     case "":
       var_dump("FAIL");
