@@ -1,6 +1,6 @@
 <?php
   // configuration pour accèder à la base de données
-  $user = "";
+  $user = "root";
   $mdp  = "";
-  $adr  = "";
-  $bdd  = "";
+  $adr  = "localhost";
+  $bdd  = "application";
